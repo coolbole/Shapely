@@ -837,7 +837,20 @@ class LGEOS340(LGEOS330):
         self.methods['nearest_points'] = self.GEOSNearestPoints
 
 
-if geos_version >= (3, 4, 0):
+class LGEOS370(LGEOS340):
+    """Proxy for GEOS 3.7.0-CAPI-1.9.0
+    """
+    geos_version = (3, 7, 0)
+    geos_capi_version = (1, 9, 0)
+
+    def __init__(self, dll):
+        super(LGEOS370, self).__init__(dll)
+        self.methods['frechet_distance'] = self.GEOSFrechetDistance
+
+
+if geos_version >= (3, 7, 0):
+    L = LGEOS370
+elif geos_version >= (3, 4, 0):
     L = LGEOS340
 elif geos_version >= (3, 3, 0):
     L = LGEOS330

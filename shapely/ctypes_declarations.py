@@ -393,6 +393,10 @@ def prototype(lgeos, geos_version):
         lgeos.GEOSHausdorffDistance.restype = c_int
         lgeos.GEOSHausdorffDistance.argtypes = [c_void_p, c_void_p, c_void_p]
 
+    if geos_version >= (3, 7, 0):
+        lgeos.GEOSFrechetDistance.restype = c_int
+        lgeos.GEOSFrechetDistance.argtypes = [c_void_p, c_void_p, c_void_p]
+
     # Reader and Writer APIs
 
     lgeos.GEOSWKTReader_create.restype = c_void_p
