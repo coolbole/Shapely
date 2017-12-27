@@ -838,10 +838,10 @@ class LGEOS340(LGEOS330):
 
 
 class LGEOS370(LGEOS340):
-    """Proxy for GEOS 3.7.0-CAPI-1.9.0
+    """Proxy for GEOS 3.7.0-CAPI-1.11.0
     """
     geos_version = (3, 7, 0)
-    geos_capi_version = (1, 9, 0)
+    geos_capi_version = (1, 11, 0)
 
     def __init__(self, dll):
         super(LGEOS370, self).__init__(dll)
